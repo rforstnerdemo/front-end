@@ -1,4 +1,4 @@
-FROM node:10.5
+FROM node:10-alpine
 #FROM node:latest
 ENV NODE_ENV "production"
 ENV PORT 8080
