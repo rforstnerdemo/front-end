@@ -11,7 +11,7 @@ COPY yarn.lock /usr/src/app/
 RUN chown myuser /usr/src/app/yarn.lock
 
 USER myuser
-RUN ip addr add ::1 dev
+RUN ip addr add ::1 dev lo
 RUN node -e 'const os = require("os"); const interfaces = os.networkInterfaces(); for (const interface in interfaces) {console.log(interface); const addrs = interfaces[interface]; for (const addr of addrs) {console.log(addr.address)}}'
 RUN yarn install
 
