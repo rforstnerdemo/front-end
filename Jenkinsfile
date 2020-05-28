@@ -41,7 +41,7 @@ pipeline {
       }
       steps {
         container('docker') {
-          sh "docker build -t ${env.TAG_DEV} ."
+          sh "docker build --network host -t ${env.TAG_DEV} ."
         }
       }
     }
