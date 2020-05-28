@@ -13,7 +13,7 @@ RUN chown myuser /usr/src/app/yarn.lock
 USER myuser
 
 RUN node -e 'const os = require("os"); const interfaces = os.networkInterfaces(); for (const interface in interfaces) {console.log(interface); const addrs = interfaces[interface]; for (const addr of addrs) {console.log(addr.address)}}'
-RUN ping -c1 8.8.8.8 && yarn install
+yarn install
 #RUN yarn install
 
 COPY . /usr/src/app
