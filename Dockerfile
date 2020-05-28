@@ -3,7 +3,8 @@ FROM node:latest
 ENV NODE_ENV "production"
 ENV PORT 8080
 EXPOSE 8080
-RUN addgroup mygroup && adduser -D -G mygroup myuser && mkdir -p /usr/src/app && chown -R myuser /usr/src/app
+RUN addgroup mygroup && adduser --disable-login --group mygroup myuser && mkdir -p /usr/src/app && chown -R myuser /usr/src/app
+#RUN addgroup mygroup && adduser -D -G mygroup myuser && mkdir -p /usr/src/app && chown -R myuser /usr/src/app
 
 # Prepare app directory
 WORKDIR /usr/src/app
