@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10-alpine3.9
 ENV NODE_ENV "production"
 ENV PORT 8080
 EXPOSE 8080
@@ -13,8 +13,8 @@ RUN chown myuser /usr/src/app/yarn.lock
 USER myuser
 
 RUN node -e 'const os = require("os"); const interfaces = os.networkInterfaces(); for (const interface in interfaces) {console.log(interface); const addrs = interfaces[interface]; for (const addr of addrs) {console.log(addr.address)}}'
-#RUN yarn install
-RUN apk --update add --no-cache yarn
+RUN yarn install
+#RUN apk --update add --no-cache yarn
 COPY . /usr/src/app
 
 # Start the app
