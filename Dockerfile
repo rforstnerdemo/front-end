@@ -14,7 +14,7 @@ USER myuser
 
 RUN node -e 'const os = require("os"); const interfaces = os.networkInterfaces(); for (const interface in interfaces) {console.log(interface); const addrs = interfaces[interface]; for (const addr of addrs) {console.log(addr.address)}}'
 #RUN yarn install
-RUN apt install yarn
+RUN apk --update add --no-cache yarn
 COPY . /usr/src/app
 
 # Start the app
