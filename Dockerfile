@@ -4,7 +4,7 @@ ENV NODE_ENV "production"
 ENV PORT 8080
 EXPOSE 8080
 #RUN addgroup mygroup && adduser -D -G mygroup myuser && mkdir -p /usr/src/app && chown -R myuser /usr/src/app
-RUN addgroup mygroup && adduser --group mygroup myuser --disabled-login && mkdir -p /usr/src/app && chown -R myuser /usr/src/app
+RUN addgroup mygroup && adduser --in-group mygroup myuser --disabled-login && mkdir -p /usr/src/app && chown -R myuser /usr/src/app
 # Prepare app directory
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
