@@ -92,8 +92,8 @@ function order() {
 
     var success = false;
     $.ajax({
-        //url: "http://orders",
-	url: "http://a0db26a8ba62c11ea8582027d628b820-1595373936.us-west-2.elb.amazonaws.com",
+        url: "http://orders",
+	//url: "http://a0db26a8ba62c11ea8582027d628b820-1595373936.us-west-2.elb.amazonaws.com",
         type: "POST",
         async: false,
         success: function (data, textStatus, jqXHR) {
