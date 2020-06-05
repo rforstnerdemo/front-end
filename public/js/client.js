@@ -93,7 +93,7 @@ function order() {
     var success = false;
     $.ajax({
         //url: "http://orders",
-	url: "orders",
+	uri: "orders",
         type: "POST",
         async: false,
         success: function (data, textStatus, jqXHR) {
